@@ -196,7 +196,7 @@ function is_category_in_cart($category) {
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 
         // if a product is not in our category, bail out since we know the category is not alone
-        if ( has_term( $category, 'product_cat', $cart_item['data']->id ) ) {
+        if ( has_term( $category, 'product_cat', $cart_item['data']->get_id() ) ) {
             return true;
         }
     }
